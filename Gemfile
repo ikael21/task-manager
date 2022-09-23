@@ -23,6 +23,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
   gem 'rubocop'
+  gem 'faker', '~> 1.6', '>= 1.6.6'
+  gem 'pry-rails'
 end
 
 group :development do
