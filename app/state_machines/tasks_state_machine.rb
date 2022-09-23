@@ -18,15 +18,15 @@ module TasksStateMachine
       end
 
       event :move_to_qa do
-        transition :in_development => :in_qa
+        transition in_development: :in_qa
       end
 
       event :prepare_for_release do
-        transition :in_code_review => :ready_for_release
+        transition in_code_review: :ready_for_release
       end
 
       event :release do
-        transition :ready_for_release => :released
+        transition ready_for_release: :released
       end
 
       event :archive do
