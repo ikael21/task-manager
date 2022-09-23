@@ -9,7 +9,7 @@ app-init:
 	@docker-compose run --rm $(RAILS_CONTAINER) bash -c \
       "bundle install && \
        yarn install --frozen-lockfile && \
-       rails db:drop db:create db:migrate db:seed"
+       rails db:create db:migrate db:seed"
 
 app:
 	@docker-compose up
