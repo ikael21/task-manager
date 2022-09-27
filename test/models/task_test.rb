@@ -13,13 +13,13 @@ class TaskTest < ActiveSupport::TestCase
 
   test 'initial state is new_task' do
     task = create(:task)
-    expected_state = 'new_task'
 
+    expected_state = 'new_task'
     assert_equal(expected_state, task.state)
   end
 
   test '#develop - should move state from new_task to in_development' do
-    task = create(:task, state: 'new_task')
+    task = create(:task, state: :new_task)
 
     task.develop
 
@@ -28,7 +28,7 @@ class TaskTest < ActiveSupport::TestCase
   end
 
   test '#develop - should move state from in_qa to in_development' do
-    task = create(:task, state: 'in_qa')
+    task = create(:task, state: :in_qa)
 
     task.develop
 
@@ -37,11 +37,20 @@ class TaskTest < ActiveSupport::TestCase
   end
 
   test '#develop - should move state from in_code_review to in_development' do
-    task = create(:task, state: 'in_code_review')
+    task = create(:task, state: :in_code_review)
 
     task.develop
 
     expected_state = 'in_development'
+    assert_equal(expected_state, task.state)
+  end
+
+  test '#move_to_qa - should move state from in_development to in_qa' do
+    task = create(:task, state: :in_development)
+
+    task.move_to_qa
+
+    expected_state = 'in_qa'
     assert_equal(expected_state, task.state)
   end
 end
