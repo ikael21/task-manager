@@ -6,6 +6,7 @@ on:
 
 jobs:
   label_issues:
+    name: Label a new issue
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -15,3 +16,13 @@ jobs:
         with:
           add-labels: "ready_for_development"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+  add_to_project_board:
+    name: Add issue to project board
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@RELEASE_VERSION
+        with:
+          project-url: https://github.com/users/ikael21/projects/2
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
+          labeled: ready_for_development
