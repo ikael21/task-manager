@@ -29,7 +29,7 @@ jobs:
         with:
           bundler-cache: true
       # Check with Rubocop
-      - name: Rubocop
+      - name: Run rubocop
         run: bundle exec rubocop
       # Add or replace database setup steps here
       - name: Set up database schema
