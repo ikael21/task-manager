@@ -25,3 +25,4 @@ jobs:
         with:
           project-url: https://github.com/users/ikael21/projects/2
           github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
+          labeled: ready_for_development
