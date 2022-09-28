@@ -1,4 +1,5 @@
 name: "Ruby on Rails CI"
+
 on:
   push:
     branches: [ "master" ]
