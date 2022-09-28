@@ -17,12 +17,16 @@ module TasksStateMachine
         transition [:new_task, :in_qa, :in_code_review] => :in_development
       end
 
+      event :send_for_code_review do
+        transition in_development: :in_code_review
+      end
+
       event :move_to_qa do
-        transition in_development: :in_qa
+        transition in_code_review: :in_qa
       end
 
       event :prepare_for_release do
-        transition in_code_review: :ready_for_release
+        transition in_qa: :ready_for_release
       end
 
       event :release do
