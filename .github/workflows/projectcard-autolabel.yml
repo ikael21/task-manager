@@ -1,0 +1,27 @@
+name: ProjectCard Auto Labels
+
+on:
+  project_card:
+    types: [moved]
+
+jobs:
+  projectcardautolabel_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run ProjectCard AutoLabel
+      id: runprojectcardautolabel
+      uses: Matticusau/projectcard-autolabel@v1.0.0
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        autolabel-config: '[
+            {
+              "column": "in_development",
+              "add_labels": ["in_development"],
+              "remove_labels": ["ready_for_development", "ready_for_release", "released"]
+            },
+            {
+              "column": "ready_for_release",
+              "add_labels": ["ready_for_release"],
+              "remove_labels": ["in_development", "ready_for_development", "released"]
+            }
+          ]'
