@@ -5,6 +5,7 @@ require 'test_helper'
 class Web::SessionsControllerTest < ActionController::TestCase
   test 'should get new' do
     get :new
+
     assert_response :success
   end
 
@@ -21,7 +22,7 @@ class Web::SessionsControllerTest < ActionController::TestCase
     assert_response :redirect
   end
 
-  test "should delete destroy" do
+  test 'should delete destroy' do
     delete :destroy
 
     assert_response :redirect
