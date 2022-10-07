@@ -8,10 +8,10 @@ class Web::DevelopersController < Web::ApplicationController
   def create
     @developer = Developer.create(developer_params)
 
-    render :new unless @developer.save
+    render(:new) unless @developer.save
 
-    sign_in @developer
-    redirect_to :board
+    sign_in(@developer)
+    redirect_to(:board)
   end
 
   private
