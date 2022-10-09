@@ -20,6 +20,11 @@ gem 'slim-rails'
 gem 'state_machines'
 gem 'state_machines-activerecord'
 
+gem 'kaminari'
+gem 'ransack'
+gem 'responders'
+gem 'active_model_serializers'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'

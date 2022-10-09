@@ -21,8 +21,4 @@ class Web::DevelopersController < Web::ApplicationController
                                       :email, :password,
                                       :password_confirmation)
   end
-
-  def dog_params
-    params.require(:dog).permit(:name, :age)
-  end
 end
