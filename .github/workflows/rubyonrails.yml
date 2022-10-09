@@ -30,13 +30,6 @@ jobs:
         with:
           bundler-cache: true
 
-      # Add or replace dependency steps here
-      - name: Cache node_modules
-        uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-
       # Yarn install
       - name: Install yarn packages
         run: yarn install --frozen-lockfile
