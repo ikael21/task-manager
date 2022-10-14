@@ -14,4 +14,14 @@ class Web::DevelopersControllerTest < ActionController::TestCase
 
     assert_response :redirect
   end
+
+  test 'should render new when developer invalid' do
+    post :create, params: { developer: { email: 'email',
+                                         first_name: '',
+                                         last_name: '',
+                                         password: 'pass',
+                                         password_confirmation: 'pass' } }
+
+    assert_template :new
+  end
 end
