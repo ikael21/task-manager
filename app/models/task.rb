@@ -3,9 +3,9 @@
 class Task < ApplicationRecord
   include TasksStateMachine
 
-  belongs_to :author, class_name: 'User'
+  belongs_to :author, class_name: 'User', validate: true
   belongs_to :assignee, class_name: 'User', optional: true
 
-  validates_presence_of :name, :author, :description
-  validates_length_of :description, maximum: 500
+  validates :name, :description, presence: true
+  validates :description, length: { maximum: 500 }
 end
