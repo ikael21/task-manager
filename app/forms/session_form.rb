@@ -20,6 +20,6 @@ class SessionForm
   end
 
   def user_valid?
-    !user.blank? && user.authenticate(password)
+    user.present? && user.authenticate(password)
   end
 end
