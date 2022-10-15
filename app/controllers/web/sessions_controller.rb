@@ -8,7 +8,7 @@ class Web::SessionsController < Web::ApplicationController
   def create
     @session = SessionForm.new(session_params)
 
-    redirect_to(:new) and return unless @session.valid?
+    redirect_to(:new_session) and return unless @session.valid?
 
     sign_in(@session.user)
     redirect_to(:board)
