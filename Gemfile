@@ -15,14 +15,21 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'simple_form'
+gem 'slim-rails'
 
 gem 'state_machines'
 gem 'state_machines-activerecord'
+
+gem 'kaminari'
+gem 'ransack'
+gem 'responders'
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
   gem 'rubocop'
+  gem 'rubocop-rails', '~> 2.16', '>= 2.16.1'
   gem 'faker', '~> 1.6', '>= 1.6.6'
   gem 'pry-rails'
 end
@@ -37,6 +44,7 @@ group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

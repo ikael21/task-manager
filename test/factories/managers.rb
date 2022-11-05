@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :user do
+  factory :manager do
     first_name
     last_name
     password
-    email { "#{first_name}@example.com".downcase }
+    email { "#{first_name}.manager@example.com".downcase }
     avatar { 'MyString' }
   end
 end

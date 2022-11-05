@@ -7,8 +7,10 @@ class TaskTest < ActiveSupport::TestCase
     task = create(:task)
 
     assert task.persisted?
-    assert_equal('Manager', task.author.type)
-    assert_equal('Developer', task.assignee.type)
+    expected_author = 'Manager'
+    expected_assignee = 'Developer'
+    assert_equal(expected_author, task.author.type)
+    assert_equal(expected_assignee, task.assignee.type)
   end
 
   test 'initial state is new_task' do

@@ -22,3 +22,12 @@ app-bash:
 
 app-running-bash:
 	@docker-compose exec $(RAILS_CONTAINER) bash
+
+app-stop:
+	@docker-compose stop
+
+app-down:
+	@docker-compose down
+
+app-down-v:
+	@docker-compose down -v
