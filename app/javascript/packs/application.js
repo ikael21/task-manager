@@ -6,7 +6,7 @@
 import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import "styles/application"
+import "stylesheets/application"
 import "material-design-lite/material.js";
 
 Rails.start()
