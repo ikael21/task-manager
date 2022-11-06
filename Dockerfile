@@ -19,6 +19,8 @@ RUN bundle install --jobs 5
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
+RUN echo "PS1='\[\033[1;31m\](\$RAILS_ENV) \[\033[1;33m\]\u \[\033[1;34m\]\w\[\033[0;35m\] \[\033[1;36m\]# \[\033[0m\]'" >> $HOME/.bashrc
+
 ADD . $RAILS_ROOT
 ENV PATH=$RAILS_ROOT/bin:$PATH
 
